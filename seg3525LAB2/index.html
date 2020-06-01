@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<! This style sheet is taken from https://www.w3schools.com/howto/howto_js_tabs.asp>
+		<link href="styles/style.css" rel="stylesheet" type="text/css">
+		<script src="https://code.jquery.com/jquery-2.0.0.min.js"></script>
+		<script src="scripts/groceries.js"></script>
+		<script src="scripts/main.js"></script>
+		<title>MyCart</title>
+</head>
+
+<body>
+
+	<h1 style="text-align:center;">MyCart</h1>
+
+	<!-- Tab links, each one with an onclick event associated with it -->
+	<div class="tab">
+		<button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+		<button class="tablinks" onclick="openInfo(event, 'Products')">Produits</button>
+		<button class="tablinks" onclick="openInfo(event, 'Cart')">Panier</button>
+	</div>
+
+	<!-- Tab content -->
+	<div id="Client" class="tabcontent">
+		<h3>Information du client</h3>
+		<p>Restrictions</p>
+		<b>Choisissez une Categorie:</b><br>
+
+		<div id="dietSelect" onchange="populateListProductChoices()">
+			<input type="checkbox" name="Vegetarian" value="Vegetarian" id="Vegetarian">
+			<label>Vegetarien</label><br>
+
+			<input type="checkbox" name="GlutenFree" value="GlutenFree" id="GlutenFree" />
+			<label>Sans Gluten</label><br>
+
+			<input type="checkbox" name="Organic" value="Organic" id="Organic" />
+			<label>Organique</label><br>
+
+			<input type="checkbox" name="None" value="None" id="None" />
+			<label>Aucun</label><br>
+		</div>
+	</div>
+
+	<div id="Products" class="tabcontent">
+		<h3>Vos Produits</h3>
+		<p>Nous avons selectionne des produits</p>
+		Choisissez des produits
+		<div id="displayProduct"></div>
+		<button id="addCart" type="button" class="block" onclick="selectedItems()">
+			Ajouter au panier
+		</button>
+	</div>
+
+	<div id="Cart" class="tabcontent">
+		<h3>Panier</h3>
+		<p>Voici votre panier.</p>
+		<div id="displayCart"></div>
+	</div>
+
+</body>
+
+<footer>
+	<p>Fait par Hamza El Kadiri</p>
+</footer>
+
+</html>

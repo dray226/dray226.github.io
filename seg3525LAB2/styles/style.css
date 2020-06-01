@@ -1,0 +1,39 @@
+/* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: lightgray;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-color: gray;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid red;
+  border-top: none;
+}
+
+.footer-signature {
+  color: black;
+  font-style: italic;
+  position: absolute;
+  bottom: -10px;
+  position: fixed;
+}
