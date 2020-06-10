@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html style="background-color:#ededed;">
+<head>
+	<! Ce style est inspiré de https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+	<title>MaCarte</title>
+	<h1 style="background-color:#777777;color:white;text-align:center;">Macarte</h1>
+</head>
+<body>
+
+
+<div class="tab">
+  <button class="tablinks" onclick="openInfo(event, 'Client'); tabColour(0);">Client</button>
+  <button class="tablinks" onclick="openInfo(event, 'Products'); tabColour(1);">Produits</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart'); tabColour(2);">Carte</button>
+</div>
+
+<!-- Tab content -->
+<div id="Client" class="tabcontent">
+	<h3>Information sur le client</h3>
+	Veuillez preciser votre regime alimentaire (laissez vide si pas de regime)<br>
+
+	<input type="checkbox" id="filter1" name="filter1" value="Vegetarian">
+	<label for="filter1">Vegetarien</label><br>
+	<input type="checkbox" id="filter2" name="filter2" value="Gluten-free">
+  	<label for="filter2">Sans-Gluten</label><br>
+  	<input type="checkbox" id="filter3" name="filter3" value="Organic">
+  	<label for="filter3">Organique</label><br>
+	<button id="applyFilters" onclick="start()">Appliquer des filtres</button><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+<div id="Products" class="tabcontent">
+	<h3>Vos suggestions personnalisees</h3>
+	<p>Notre pre-selections basees sur votre regime.</p>
+
+	<div id="div1"></div>
+	Categories:
+	<select id="categorySelect" name="categorySelect" onchange="applyFilters()">
+	<option value="all">Tout</option>
+	<option value="bakery">Boulangerie</option>
+	<option value="beverages">Boissons</option>
+	<option value="dairy">Produits laitiers</option>
+	<option value="meat">Viande</option>
+	<option value="vegetablesANDfruits">Legumes et Fruits</option>
+	</select><br><br>
+
+	Choisissez des produits a acheter:<br>
+	<div id="displayProduct"></div>
+	<button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Ajouter les articles selectionnes au panier
+	</button><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+<div id="Cart" class="tabcontent">
+	<h3>Panier d'achat</h3>
+	<p>Voici le contenu de votre panier.</p>
+	<div id="displayCart"></div>
+	<button id="order" type="button" class="block" onclick="">
+		Passer commande
+	</button><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #abb;
+  color: black;
+  text-align: center;
+}
+</style>
+
+<div class="footer">
+  <p>Site web concu par Hamza El Kadiri</p>
+</div>
+</body>
+</html>

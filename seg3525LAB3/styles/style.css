@@ -1,0 +1,27 @@
+/* Ce style est inspiré de https://www.w3schools.com/howto/howto_js_tabs.asp> */
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #9bc8d7;
+  background-color: #9bc8d7;
+  color: white;
+}
+
+/* Donne un style aux boutons qui sont utilisés pour ouvrir le contenu de l'onglet */
+.tab button {
+  float: center;
+  border: 5px solid #c6c6c6;
+  outline: none;
+  cursor: pointer;
+  padding: 18px 21px;
+  transition: 0.0s;
+}
+
+/* Style du contenu de l'onglet */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid red;
+  border-top: none;
+}
