@@ -93,7 +93,7 @@ function selectedItems(){
 	}
 
 	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
+	c.appendChild(document.createTextNode("Le prix total est " + getTotalPrice(chosenProducts)));
 	openInfo(event, 'Cart');
 	tabColour(2);
 }
