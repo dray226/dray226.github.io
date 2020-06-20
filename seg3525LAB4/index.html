@@ -1,0 +1,318 @@
+
+<!-- This file contains many elements adapted from the online tutoral -->
+<!-- on Bootstrap 4 as found here: https://www.w3schools.com/bootstrap4/default.asp -->
+
+<!-- Images source: -->
+<!-- jule.jpg taken from https://www.freepik.com/premium-vector/cartoon-successful-hairdresser_3951066.htm -->
+<!-- Erwind.jpb https://www.kijiji.ca/v-construction-trades-jobs/winnipeg/bicycle-mechanic/1499188319 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- The head should contain an appropriate title for your site -->
+<head>
+    <title>Module 4 - Labo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- Your own additional style sheet -->
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="alert alert-danger alert-dismissible">
+            <h2>Avis important</h2>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            En raison de la situation pandemique liée au  <strong>COVID-19</strong> nous sommes actuellement fermes, toutefois vous pouvez nous joindre
+            par mail: coiffurecl@gmail.com pour toute information concernant une coupe de cheveux ou autre.
+        </div>
+    </div>
+
+    <!-- Medium size container, padding 3, margins 3, background dark, text is white -->
+    <!-- Should show the name of your company with an image or logo -->
+    <!-- Bootstrap has its own font for H1, H2, p, etc.  -->
+    <!-- Look in BS4 Typography https://www.w3schools.com/bootstrap4/bootstrap_typography.asp -->
+    <!-- Use your own CSS file to change those fonts if they do not correspond to your company's look -->
+    <div class="container-md p-3 my-3 border bg-dark text-white">
+        <h1>Bienvenue à Coiffure CL </h1>
+        <p>Vos cheveux sont notre priorite</p>
+        <div class="card bg-danger" style="width:200px">
+                <img class="card-img-top" src="ciseaux.png" alt="scissors" style="width:100%">
+                <div class="card-body">
+
+                    </div>
+                </div>
+          </div>
+    </div>
+
+    <!-- When you have messages to tell, remember that center align is not always the best choice -->
+    <div class="container-md p-3 my-3 border bg-light text-success">
+        <h3>Historique</h3>
+        <p>Chez CL coiffure, nous saurons vous satisfaire, nous mettons a votre disposition nos meilleurs coiffeurs pour assurer un service a la hauteur de notre reputation,
+        nous sommes la depuis 1923, vos cheveux sont notre priorite. </p>
+    </div>
+
+    <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
+    <!-- Might be (or not) useful to show some information to the user -->
+    <div class="container">
+        <h2>dercription du service</h2>
+        <p>Services offerts</p>
+        <table class="table table-primary table-hover">
+            <thead>
+            <tr>
+                <th>Service</th>
+                <th>Prix</th>
+                <th>Description</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Coupe de cheveux pour hommes</td>
+                <td>$30$</td>
+
+            </tr>
+
+            <tr>
+                <td>Coloration</td>
+                <td>$20</td>
+
+            </tr>
+            <tr>
+                <td>Séchage par soufflage</td>
+                <td>$80</td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+     <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
+    <!-- Card columns allows multiple cards next to each other -->
+    <!-- The first card's button doesn't go anywhere, it could be a modal -->
+    <!-- My second card limits the information seen and uses collapsible to show more -->
+    <div class="container">
+        <h2>Styles de cheveux</h2>
+        <div class="card-columns">
+            <div class="card bg-danger" style="width:200px">
+                <img class="card-img-top" src="cheveux_longs.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Cheveux longs</h4>
+                    </div>
+                </div>
+
+            <div class="card bg-danger" style="width:200px">
+                <img class="card-img-top" src="medium_cheveux.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Cheveux medium</h4>
+                    </div>
+                </div>
+
+    <div class="card bg-danger" style="width:200px">
+                <img class="card-img-top" src="cheveux_courts.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Cheveux courts</h4>
+                    <!-- collapsible part -->
+                    </div>
+                </div>
+
+                <div class="card bg-danger" style="width:200px">
+                    <img class="card-img-top" src="brune.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Cheveux bruns</h4>
+
+                        </div>
+                    </div>
+
+             <div class="card bg-danger" style="width:200px">
+                <img class="card-img-top" src="blonde.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Cheveux blonds</h4>
+
+                    </div>
+                </div>
+
+
+
+        </div>
+    </div>
+
+
+    <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
+    <!-- Card columns allows multiple cards next to each other -->
+    <!-- The first card's button doesn't go anywhere, it could be a modal -->
+    <!-- My second card limits the information seen and uses collapsible to show more -->
+    <div class="container p-3">
+        <h2>Nos coiffeurs</h2>
+        <div class="card-columns">
+            <div class="card bg-danger" style="width:200px">
+                <img class="card-img-top" src="elise.jng" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Elise</h4>
+                    <p class="card-text">Coiffeuse et consultante</p>
+
+                    <a href="#profile1" class="btn btn-primary" data-toggle="collapse">A propos d'Elise</a>
+                    <div id="profile1" class="collapse p-2">
+                        <p>Amanda a recu un diplome dans une unversite prestigieuse elle a plus de 20 ans d'experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-danger" style="width:200px">
+                <img class="card-img-top" src="hamid.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Hamid</h4>
+                    <p class="card-text">Coiffeur</p>
+
+                    <a href="#profile2" class="btn btn-primary" data-toggle="collapse">A propos de Hamid</a>
+                    <div id="profile2" class="collapse p-3">
+                        <p>Hamid a 8 ans d'experience et a travaille avec de nombreuses stars.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Collapsible with multiple items - accordion -->
+    <!-- https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp -->
+    <!-- As we want to do a vertical navigation better suited for mobile design, an accordion pattern -->
+    <!-- could work well.  You can use other patterns too.  This is just an example. -->
+    <div class="container">
+        <div class="container-md p-3 my-3 border bg-warning text-white">
+            <h1>CL coiffure</h1>
+            <p>Rendez-vous et contact info</p>
+        </div>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseService">selection de service</a>
+                </div>
+                <div id="collapseService" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Choisissez le service voulu: </p> </br>
+                        <form>
+                            <input type="radio" name="hair" value="Men's Haircut">coupe de cheveux($30)<br>
+                             <input type="radio" name="hair" value="BlowDry">Soufflage($80)<br>
+                             <input type="radio" name="hair" value="HairColour">Coloration($20)<br>
+                    </form>
+                     <div class="buttons">
+                      <button class="submit">Soumettre</button>
+                     </div>
+                    </div>
+                </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Scheduling de date</a>
+                </div>
+                <div id="collapseDate" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Quelle date?</p>
+                        <!-- Bootstrap has various input components. Some examples are given here: -->
+                        <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
+                        <div class="form-group row">
+                            <label for="dateTimeInput" class="col-2 col-form-label">Date and heure</label>
+                            <div class="col-10">
+                                <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput">
+                            </div>
+                        </div>
+                         <div class="buttons">
+                             <button class="submit">Soumettre</button>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo">vos infos personnelles</a>
+                </div>
+                <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                        Veuillez entrer votre nom, email, numero de telephone.</p>
+                        <form name="User Info Questionaire" method="POST">
+                             <div style="font-family:verdana">
+                                <b>Information du client : </b>:<br>
+                                <br>
+                                 <textarea name="comment[body]" rows="10" cols="50" wrap="physical" id="fav_val"></textarea>
+                                 <br>
+                            </div>
+
+                        </form>
+
+                         <div class="buttons">
+                            <button class="submit">Soumettre</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseAbout">Nos infos</a>
+                </div>
+                <div id="collapseAbout" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p><b>Location: </b>88 Templeton street, L9I K0P</br>
+                    <b>Numero: </b> 999-999-0000  </br>
+                <b>Email Addresse: </b> coiffurecl@gmail.com </br>
+                <b>heure de travail: </b> Lundi - samedi, 11 AM - 6 PM
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Including a modal https://www.w3schools.com/bootstrap4/bootstrap_modal.asp -->
+    <!-- Modals are useful for additional information or questions -->
+    <!-- Here the modal is used for a little survey -->
+    <div class="container">
+        <h2>quiz de satisfaction</h2>
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mySurvey">Ouvrir le quiz</button>
+    <!-- Modal -->
+        <div class="modal fade" id="mySurvey" role="dialog">
+            <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <h2>Avez vous apprecie votre experience sur notre site?</h2>
+                        <form>
+                            <input type="radio" name="test1" value="yes">Oui</label>
+                            <input type="radio" name="test1" value="no">Non</label>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <i>
+            Website Designed By: Hamza Elkadiri</br>
+            Student number: 300057279
+        </i>
+    </footer>
+</body>
+</html>
