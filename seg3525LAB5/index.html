@@ -1,0 +1,510 @@
+
+<!-- This file contains many elements adapted from the online tutoral -->
+<!-- on Bootstrap 4 as found here: https://www.w3schools.com/bootstrap4/default.asp -->
+
+<!-- Code for the date constraints inspired by https://stackoverflow.com/questions/45529028/html-input-type-date-field-constraints -->
+
+<!DOCTYPE html>
+<html lang="en">
+<script>
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1; //January is 0!
+var yyyy = today.getFullYear();
+
+if (dd < 10) {
+  dd = '0' + dd
+}
+
+if (mm < 10) {
+  mm = '0' + mm
+}
+var minimumDate = dateParser(MyProfile.nextDistDate);
+if(today.getDay() >= 3 && today.getHours() >= 10){
+    minimumDate.setDate(minimumDate.getDate()+7);
+}
+
+today = yyyy + '-' + mm + '-' + dd;
+document.getElementById('dateTimeInput').setAttribute("min", today);
+
+function validateForm(){
+	var name = document.forms["myForm"]["firstname"].value;
+	var email = document.forms["myForm"]["email"].value;
+	var address = document.forms["myForm"]["address"].value;
+	var city = document.forms["myForm"]["city"].value;
+    var state = document.forms["myForm"]["state"].value;
+	var zip = document.forms["myForm"]["zip"].value;
+	var cardname = document.forms["myForm"]["cardname"].value;
+	var cardnumber = document.forms["myForm"]["cardnumber"].value;
+    var expmonth = document.forms["myForm"]["expmonth"].value;
+	var expyear = document.forms["myForm"]["expyear"].value;
+	var cvv = document.forms["myForm"]["cvv"].value;
+
+	if (name.length<1 || typeof name !== 'string' ) {
+        document.getElementById('error-name').innerHTML = " Veuillez entrer un nom valide *";
+    }
+    if (email.length<1 || typeof email !== 'string' ) {
+        document.getElementById('error-email').innerHTML = " Veuillez entrer une adress email valide *";
+    }
+    if (address.length<1 || typeof address !== 'string' ) {
+        document.getElementById('error-address').innerHTML = " Veuillez entrer une adresse valide *";
+    }
+    if (city.length<1 || typeof city !== 'string' ) {
+        document.getElementById('error-city').innerHTML = " Veuillez entrer une ville valide *";
+    }
+    if (state.length<1 || state.length>2) {
+        document.getElementById('error-state').innerHTML = " Veuillez entrer une province valide *";
+    }
+    if (zip.length<1 || || zip.length>7) {
+        document.getElementById('error-zip').innerHTML = " Veuillez entrer un code postal valide *";
+    }
+    if (cardname.length<1 || typeof cardname !== 'string' ) {
+        document.getElementById('error-cardName').innerHTML = " Veuillez entrer un nom de carte valide *";
+    }
+    if (cardnumber.length<1 || cardnumber.length > 16 || typeof cardnumber !== 'integer' ) {
+        document.getElementById('error-cardNum').innerHTML = " Veuillez entrer un numero de carte valide *";
+    }
+    if (expmonth.length<1 || expmonth.length > 2) {
+        document.getElementById('error-expireMonth').innerHTML = " Veuillez entrer un mois valide*";
+    }
+    if (expyear.length<1 || expyear<2020) {
+        document.getElementById('error-expireYear').innerHTML = " Veuillez entrer une annee valide *";
+    }
+    if (cvv.length<1 || cvv.length > 3 || typeof cvv !== 'string' ) {
+        document.getElementById('error-cvv').innerHTML = " Veuillez entrer un CVV valide *";
+    }
+    if(name.length<1 || email.length<1 || address.length<1 || city.length<1 || state.length<1 || zip.length<1 || cardname.length<1 || cardnumber.length<1
+     || expmonth.length<1 || expyear.length<1 || cvv.length<1){
+       	return false;
+    }
+}
+</script>
+
+<!-- The head should contain an appropriate title for your site -->
+<head>
+    <title>Module 5 - Labo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- Your own additional style sheet -->
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {margin: 0;}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #E8E8E8;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #BDB76B;}
+
+ul.topnav li a.active {background-color: #FF7F50;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: auto) {
+  ul.topnav li.right,
+  ul.topnav li {float: none;}
+}
+</style>
+</head>
+
+
+<body>
+
+<ul class="topnav">
+  <li><a class="active" href="#home"><img src="aPropos.png" alt="about" style="width:30px;">A propos</a></li>
+  <li><a href="#services"><img src="service.png" alt="service" style="width:30px;">Services</a></li>
+  <li><a href="#styles"><img src="style.png" alt="style" style="width:30px;">Styles</a></li>
+  <li><a href="#staff"><img src="staff.png" alt="staff.png" style="width:30px;">Notre staff</a></li>
+  <li class="right"><a href="#checkout"><img src="paiement.png" alt="checkout" style="width:30px;">Paiement</a></li>
+</ul>
+
+    <!-- Medium size container, padding 3, margins 3, background dark, text is white -->
+    <!-- Should show the name of your company with an image or logo -->
+    <!-- Bootstrap has its own font for H1, H2, p, etc.  -->
+    <!-- Look in BS4 Typography https://www.w3schools.com/bootstrap4/bootstrap_typography.asp -->
+    <!-- Use your own CSS file to change those fonts if they do not correspond to your company's look -->
+    <div class="container-md p-3 my-3 border bg-dark text-white">
+        <h1>Bienvenue à Coiffure CL!</h1>
+        <p>Vos cheveux sont notre priorite</p>
+        <div class="card bg-danger" style="width:200px">
+		<div>
+                <center>
+                <img class="card-img-top" src="ciseaux.png" alt="scissors" style="width:100%">
+            </center>
+		</div>
+                </div>
+          </div>
+    </div>
+ <!-- Bootstrap has components for alerts: https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp  -->
+    <!-- These can be useful for making sure someone reads something before continuing -->
+    <div class="container">
+        <div class="alert alert-danger alert-dismissible">
+            <h2>Avis important</h2>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            En raison de la situation pandemique liée au <strong>COVID-19</strong> nous sommes actuellement fermes, toutefois vous pouvez nous joindre par mail: coiffurecl@gmail.com pour toute information concernant une coupe de cheveux ou autre.
+        </div>
+    </div>
+
+    <!-- When you have messages to tell, remember that center align is not always the best choice -->
+    <div class="container-md p-3 my-3 border bg-light text-success" id="home">
+        <h3>Historique</h3>
+        <p>Chez CL coiffure, nous saurons vous satisfaire, nous mettons a votre disposition nos meilleurs coiffeurs pour assurer un service a la hauteur de notre reputation, nous sommes la depuis 1923, vos cheveux sont notre priorite. </p>
+    </div>
+
+    <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
+    <!-- Might be (or not) useful to show some information to the user -->
+    <div class="container" id="services">
+        <h2> description du service</h2>
+        <p>Voici une liste des service offerts</p>
+        <table class="table table-primary table-hover">
+            <thead>
+            <tr>
+                <th>Service</th>
+                <th>Pricing</th>
+                <th>Description</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Coupe de cheveux pour homme</td>
+                <td>$30</td>
+                <td>ce prix est valable pour tout age</td>
+            </tr>
+
+            <tr>
+                <td>Coloration</td>
+                <td>$20</td>
+                <td> une coloration est valable pour le prix de 20$ </td>
+            </tr>
+
+
+            <tr>
+                <td>Sechage par soufflage</td>
+                <td>$80</td>
+                <td>Notre staff offre les meilleurs services en terme de soufflage</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+     <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
+    <!-- Card columns allows multiple cards next to each other -->
+    <!-- The first card's button doesn't go anywhere, it could be a modal -->
+    <!-- My second card limits the information seen and uses collapsible to show more -->
+    <div class="container" id="styles">
+        <h2>Styles de cheveux</h2>
+        <div class="card-columns">
+            <div class="card bg-danger" style="width:200px">
+                <img class="card-img-top" src="cheveux_longs.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Cheveux longs</h4>
+                    <!-- collapsible part -->
+                    </div>
+                </div>
+
+            <div class="card bg-danger" style="width:200px">
+                <img class="card-img-top" src="medium_cheveux.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">cheveux medium</h4>
+                    <!-- collapsible part -->
+                    </div>
+                </div>
+
+    <div class="card bg-danger" style="width:200px">
+                <img class="card-img-top" src="cheveux_courts.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">cheveux courts</h4>
+                    <!-- collapsible part -->
+                    </div>
+                </div>
+
+             <div class="card bg-danger" style="width:200px">
+                <img class="card-img-top" src="blonde.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Cheveux blonds</h4>
+                    <!-- collapsible part -->
+                    </div>
+                </div>
+
+            <div class="card bg-danger" style="width:200px">
+                <img class="card-img-top" src="brune.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">cheveux bruns</h4>
+                    <!-- collapsible part -->
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+
+    <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
+    <!-- Card columns allows multiple cards next to each other -->
+    <!-- The first card's button doesn't go anywhere, it could be a modal -->
+    <!-- My second card limits the information seen and uses collapsible to show more -->
+    <div class="container p-3" id="staff">
+        <h2>Notre staff</h2>
+        <p>veuillez choisir votre coiffeur prefere</p>
+        <div class="card-columns">
+            <div class="card bg-danger" style="width:200px">
+                <input type="checkbox" id="myCheckbox1" />
+                <label for="myCheckbox1"> <img class="card-img-top" src="elise.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Elise</h4>
+                    <p class="card-text">coiffeuse et consultante</p>
+                    <!-- collapsible part -->
+                    <a href="#profile1" class="btn btn-primary" data-toggle="collapse">A propos d'Elise</a>
+                    <div id="profile1" class="collapse p-2">
+                        <p>Elise a recu un diplome dans une unversite prestigieuse elle a plus de 20 ans d'experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-danger2" style="width:200px">
+                <input type="checkbox" id="myCheckbox2" />
+                <label for="myCheckbox2"><img class="card-img-top" src="hamid.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Hamid</h4>
+                    <p class="card-text">Coiffeur</p>
+                    <!-- collapsible part -->
+                    <a href="#profile2" class="btn btn-primary" data-toggle="collapse">About Justin</a>
+                    <div id="profile2" class="collapse p-3">
+                        <p>Hamid a 8 ans d'experience et a travaille avec de nombreuses stars.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Collapsible with multiple items - accordion -->
+    <!-- https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp -->
+    <!-- As we want to do a vertical navigation better suited for mobile design, an accordion pattern -->
+    <!-- could work well.  You can use other patterns too.  This is just an example. -->
+    <div class="container" id="checkout">
+        <div class="container-md p-3 my-3 border bg-warning text-white">
+            <h1>CL coiffure</h1>
+            <p>Rendez-vous et contact info</p>
+        </div>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseService">Selection de Service</a>
+                </div>
+                <div id="collapseService" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Choisissez le service voulu: </p> </br>
+                        <form>
+                            <input type="radio" name="hair" value="Men's Haircut">coupe de cheveux($30)<br>
+                            <input type="radio" name="hair" value="BlowDry">Soufflage($80)<br>
+                            <input type="radio" name="hair" value="HairColour">Coloration($20)<br>
+                    </form>
+                     <div class="buttons">
+                      <button class="submit">Soumettre</button>
+                     </div>
+                    </div>
+                </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Scheduling de date</a>
+                </div>
+                <div id="collapseDate" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>quelle date?</p>
+                        <!-- Bootstrap has various input components. Some examples are given here: -->
+                        <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
+                        <div class="form-group row">
+                            <label for="dateTimeInput" class="col-2 col-form-label">Date et heure</label>
+                            <div class="col-10">
+                                <input class="form-control" type="datetime-local" id="dateTimeInput" required>
+                            </div>
+                        </div>
+                         <div class="buttons">
+                             <button class="submit">Soumettre</button>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo">vos infos personnelles</a>
+                </div>
+                <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Veuillez entrer votre nom, email, numero de telephone.</p>
+                        <form name="User Info Questionaire" method="POST">
+                             <div style="font-family:verdana">
+                                <b>Information du client: </b><br>
+                                <br>
+                                 <textarea name="comment[body]" rows="10" cols="50" wrap="physical" id="fav_val" required></textarea>
+                                 <br>
+                            </div>
+
+                        </form>
+
+                         <div class="buttons">
+                            <button class="submit">Soumettre</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapsePaymentInfo">Paiement</a>
+                </div>
+                <div class="row">
+               <div id="collapsePaymentInfo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                          **Nous vous demandons les informations relatives à votre carte de crédit en cas d'annulation de dernière minute.
+                          Nous vous rembourserons les annulations de rendez-vous jusqu'à 12 heures avant l'heure de votre rendez-vous.
+ 		         Veuillez suivre le format donné pour les valeurs d'entrée. * Toutes les données doivent être saisies. *
+                        </p>
+  <div class="col-75">
+    <div class="container">
+      <form name="myForm" method="post" onsubmit="return validateForm()">
+
+        <div class="row">
+          <div class="col-50">
+            <h3>Adresse de facturation</h3>
+            <label for="fname"> <span id="error-name"></span><i class="fa fa-user"></i> nom complet</label>
+            <input type="text" id="fname" name="firstname" placeholder="Hamza Elkadiri" required>
+            <label for="email"> <span id="error-email"></span><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="fdfdfd.fdf@gmail.com" required>
+            <label for="adr"> <span id="error-address"></span><i class="fa fa-address-card-o"></i> Adresse</label>
+            <input type="text" id="adr" name="address" placeholder="33 tempelton street" required>
+            <label for="city"> <span id="error-city"></span><i class="fa fa-institution"></i> Ville</label>
+            <input type="text" id="city" name="city" placeholder="Ottawa" required>
+            <div class="row">
+          <div class="col-50">
+                <label for="state"> <span id="error-state"></span>Province</label>
+                <input type="text" id="state" name="state" placeholder="ON" required>
+              </div>
+              <div class="col-50">
+                <label for="zip"> <span id="error-zip"></span>Code Postal</label>
+                <input type="text" id="zip" name="zip" placeholder="M1M 6O3" required>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Paiement</h3>
+            <label for="cname"> <span id="error-cardName"></span>Nom sur la carte</label>
+            <input type="text" id="cname" name="cardname" placeholder="Hamza Elkadiri" required>
+            <label for="ccnum"> <span id="error-cardNum"></span>numero de carte de credit</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-1111-1111-1111" required>
+            <label for="expmonth"> <span id="error-expireMonth"></span>Exp mois</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="December" required>
+
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear"><span id="error-expireYear"></span>  Exp annee</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2029" required>
+              </div>
+              <div class="col-50">
+                <label for="cvv"><span id="error-cvv"></span>CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="000" required>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <label>
+          <input type="checkbox" checked="unchecked" name="sameadr"> Adresse d'expédition identique à celle de facturation
+        </label>
+        <div class="buttons">
+          <button class="submit">Soumettre</button>
+        </div>
+      </form>
+    </div>
+    </div>
+    </div>
+  </div>
+
+
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseAbout">Our Information</a>
+                </div>
+                <div id="collapseAbout" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p><b>Location: </b>88 Templeton street, L9I K0P</br>
+                    <b>Numero: </b> 6999-999-0000  </br>
+                <b> Addresse email: </b> coiffurecl@gmail.com  </br>
+                <b>heure de travail: </b> Lundi - samedi, 11 AM - 6 PM
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Including a modal https://www.w3schools.com/bootstrap4/bootstrap_modal.asp -->
+    <!-- Modals are useful for additional information or questions -->
+    <!-- Here the modal is used for a little survey -->
+    <div class="container">
+        <h2>quiz de satisfaction</h2>
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mySurvey">Ouvrir le quiz</button>
+    <!-- Modal -->
+        <div class="modal fade" id="mySurvey" role="dialog">
+            <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <h2>Avez vous apprecie votre experience sur notre site?</h2>
+                        <form>
+                            <input type="radio" name="test1" value="yes">Oui</label>
+                            <input type="radio" name="test1" value="no">Non</label>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <i>
+            Website Designed By: Hamza Elkadiri</br>
+            Student #: 300057279
+        </i>
+    </footer>
+    <script src="navbar.js"></script>
+</body>
+</html>
